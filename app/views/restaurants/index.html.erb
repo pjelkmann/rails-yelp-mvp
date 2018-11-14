@@ -1,0 +1,12 @@
+<h1>View for Index</h1>
+<ul>
+  <% @restaurants.each do |restaurant| %>
+  <li>
+    <%= link_to "#{restaurant.name.capitalize}", restaurant_path(restaurant) %>
+    <%= "#{restaurant.address}, #{restaurant.phone_number}, #{restaurant.category}" %>
+    <%= link_to 'delete', restaurant_path(restaurant), method: :delete  %>
+  </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Add Restaurant', new_restaurant_path  %>
